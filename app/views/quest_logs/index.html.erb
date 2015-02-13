@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Quest Logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quest_logs.each do |quest_log| %>
+      <tr>
+        <td><%= quest_log.title %></td>
+        <td><%= quest_log.description %></td>
+        <td><%= link_to 'Show', quest_log %></td>
+        <td><%= link_to 'Edit', edit_quest_log_path(quest_log) %></td>
+        <td><%= link_to 'Destroy', quest_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quest log', new_quest_log_path %>

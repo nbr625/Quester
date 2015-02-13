@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @quest_log.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @quest_log.description %>
+</p>
+
+<div id="quests_wrapper">
+	<%= render @quest_log.quests %>
+	<div id="form">
+		<%= render "quests/form"%>
+	</div>
+</div>
+
+<%= link_to 'Edit', edit_quest_log_path(@quest_log) %> |
+<%= link_to 'Back', quest_logs_path %>

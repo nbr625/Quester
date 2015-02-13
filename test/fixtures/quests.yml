@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyString
+  quest_log_id: 
+
+two:
+  content: MyString
+  quest_log_id: 

@@ -1,0 +1,4 @@
+<%= form_for([@quest_log, @quest_log.quests.build]) do |f| %>
+	<%= f.text_field :content, placeholder: "New Quest"%>
+	<%= f.submit %>
+<% end %>
