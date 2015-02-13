@@ -1,2 +1,25 @@
-<p><%= quest.content %></p>
-<%= link_to "Delete", quest_log_quest_path(@quest_log, quest.id), method: :delete, data: { confirm: "Are you sure you want to abandon the quest?"} %>
+<div class="row clearfix">
+	<% if quest.completed? %>
+		<div class="complete">
+			<%= link_to "Turn in Quest", complete_quest_log_quest_path(@quest_log, quest.id), method: :patch %>
+		</div>
+		<div class="todo_item">
+			<p style="opacity: 0.4;"><strike><%= quest.content %></strike></p>
+		</div>
+		<div class="trash">
+			<%= link_to "Delete",  quest_log_quest_path(@quest_log, quest.id), method: :delete, data: {confirm: "Are you sure you want to abandon the quest?"} %>
+		</div>
+
+	<% else %>
+
+		<div class="complete">
+			<%= link_to "Turn in Quest", complete_quest_log_quest_path(@quest_log, quest.id), method: :patch %>
+		</div>
+		<div class="todo_item">
+			<p><%= quest.content %></p>
+		</div>
+		<div class="trash">
+			<%= link_to "Delete",  quest_log_quest_path(@quest_log, quest.id), method: :delete, data: {confirm: "Are you sure you want to abandon the quest?"} %>
+		</div>
+	<% end %>
+</div>

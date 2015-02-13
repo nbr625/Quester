@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150212232124) do
+ActiveRecord::Schema.define(version: 20150213011625) do
 
   create_table "quest_logs", force: :cascade do |t|
     t.string   "title"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20150212232124) do
     t.integer  "quest_log_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.datetime "completed_at"
   end
 
   add_index "quests", ["quest_log_id"], name: "index_quests_on_quest_log_id"

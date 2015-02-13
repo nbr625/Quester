@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :quest_logs do
-    resources :quests
+    resources :quests do
+      member do
+        patch :complete
+      end
+    end
   end
 
 
