@@ -1,14 +1,6 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @quest_log.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @quest_log.description %>
-</p>
+<h2 class="todo_list_title"><%= @quest_log.title %></h2>
+<p class="todo_list_sub_title"><%= @quest_log.description %></p>
 
 <div id="quests_wrapper">
 	<%= render @quest_log.quests %>
@@ -17,5 +9,8 @@
 	</div>
 </div>
 
-<%= link_to 'Edit', edit_quest_log_path(@quest_log) %> |
-<%= link_to 'Back', quest_logs_path %>
+<div class="links"></div>
+	<%= link_to 'Edit', edit_quest_log_path(@quest_log) %> |
+	<%= link_to 'Delete', quest_log_path(@quest_log), method: :delete, data: {confirm: "Are you sure? All the quests will be deleted"}%> |
+	<%= link_to 'Back', quest_logs_path %>
+</div>
